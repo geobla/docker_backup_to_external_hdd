@@ -211,9 +211,11 @@ Here are the steps:
    sudo mount /dev/sdX /media/myhdd
    ```
 
-   Replace `/dev/sdX` with the actual device name of your external HDD. Be <ins>extremely careful</ins> to specify the correct device name, as mounting the wrong device can result in data loss.
+   Replace `/dev/sdX` with the actual device name of your external HDD.
 
-4. After mounting, you can use the mount command without any arguments to verify that the external HDD is mounted:
+   Be <ins>extremely careful</ins> to specify the correct device name, as mounting the wrong device can result in data loss.
+
+5. After mounting, you can use the mount command without any arguments to verify that the external HDD is mounted:
 
    ```bash
    mount
