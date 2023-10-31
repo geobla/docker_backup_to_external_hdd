@@ -75,9 +75,8 @@ nano backup_docker.sh
 #!/bin/bash
 
 # Paths to Docker-related data
-CONTAINER_DATA="/var/lib/docker/containers"
+DOCKER_DATA="/var/lib/docker"
 COMPOSE_CONFIGS="/home/your_username/Docker"  # Adjusted path
-DOCKER_VOLUMES="/var/lib/docker/volumes"
 
 # Destination backup directory on USB HDD
 BACKUP_DIR="/media/myhdd/backup"
