@@ -74,6 +74,9 @@ nano backup_docker.sh
 ```bash
 #!/bin/bash
 
+# Add this line at the beginning to redirect stderr to a log file
+exec 2>> "$BACKUP_DEST/backup_error.log"
+
 # Paths to Docker-related data
 DOCKER_DATA="/var/lib/docker"
 COMPOSE_CONFIGS="/home/your_username/Docker"  # Adjusted path
@@ -89,10 +92,11 @@ BACKUP_DEST="$BACKUP_DIR/docker_backup_$TIMESTAMP"
 mkdir -p "$BACKUP_DEST"
 
 # Perform the backup using rsync
-rsync -avP "$CONTAINER_DATA" "$COMPOSE_CONFIGS" "$DOCKER_VOLUMES" "$BACKUP_DEST"
+rsync -avP "$DOCKER_DATA" "$COMPOSE_CONFIGS" "$BACKUP_DEST"
 
 # Optional: Add a timestamp file to indicate when the backup was created
 echo "Backup created on $(date)" > "$BACKUP_DEST/backup_timestamp.txt"
+
 ```
 
 ### Set Script Permissions:
